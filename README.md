@@ -1,6 +1,6 @@
 # All in one Laravel API Factory
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/dminustin/laravel-api-factory.svg?style=flat-square)](https://packagist.org/packages/dminustin/laravel-api-factory)
+[![Latest Stable Version](http://poser.pugx.org/dminustin/laravel-api-factory/v)](https://packagist.org/packages/dminustin/laravel-api-factory) [![Total Downloads](http://poser.pugx.org/dminustin/laravel-api-factory/downloads)](https://packagist.org/packages/dminustin/laravel-api-factory) [![Latest Unstable Version](http://poser.pugx.org/dminustin/laravel-api-factory/v/unstable)](https://packagist.org/packages/dminustin/laravel-api-factory) [![License](http://poser.pugx.org/dminustin/laravel-api-factory/license)](https://packagist.org/packages/dminustin/laravel-api-factory) [![PHP Version Require](http://poser.pugx.org/dminustin/laravel-api-factory/require/php)](https://packagist.org/packages/dminustin/laravel-api-factory)
 
 This package helps to fast generate APIs
 
