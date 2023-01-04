@@ -1,0 +1,17 @@
+<?php
+
+namespace %namespace%;
+
+use Illuminate\Http\Request;
+use Dminustin\ApiFactory\Classes\ApiFactoryAction;
+
+class %className% extends ApiFactoryAction
+{
+    protected array $validationRules = %rules%;
+
+    public function handle(Request $request)
+    {
+        $this->checkAndFillRequestData($request);
+        //do something with $this-data
+    }
+}

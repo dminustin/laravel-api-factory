@@ -1,0 +1,51 @@
+auth/:
+  -
+    path: login
+    method: post
+    description: Login into system
+    middlewares: [guest]
+    produces:
+      - application/json
+    tags: [auth, user]
+    params:
+      email: string|required|unique:users,email
+      password: string|required
+    responses:
+      200:
+        description: Base response
+        schema:
+          items:
+            "$ref": "#/definitions/baseResponse"
+  -
+    path: register
+    middlewares: [guest]
+    description: User registraction
+    tags: [auth, user]
+    produces:
+      - application/json
+    method: post
+    params:
+      email: string|required
+      password: string|required
+      confirm: boolean|required
+  -
+    path: reset
+    middlewares: [guest]
+    tags: [auth, user]
+    method: post
+    params:
+      email: string|required
+user/avatar/:
+  -
+    tags: [avatar, user]
+    path: get
+    method: get
+  -
+    path: update
+    middlewares: [registered]
+    headers:
+      authorization: string|required
+    tags: [avatar, user]
+    method: post
+    params:
+      avatar: file|required

@@ -1,0 +1,16 @@
+<?php
+
+namespace %namespace%;
+
+use Illuminate\Http\Request;
+use Dminustin\ApiFactory\Classes\ApiFactoryController;
+
+class %className% extends ApiFactoryController
+{
+    protected string $actionName = \%actionName%::class;
+
+    public function handle(Request $request)
+    {
+        //do something
+    }
+}
