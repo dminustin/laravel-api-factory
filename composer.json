@@ -3,7 +3,7 @@
     "minimum-stability": "stable",
     "readme": "README.md",
     "description": "All-in-one Factory helps to create API and docs",
-    "version": "1.1.0.3",
+    "version": "1.1.0.4",
     "keywords": [
         "laravel",
         "api",
@@ -50,8 +50,8 @@
         }
     },
     "scripts": {
-        "post-package-install": [
-            "php artisan vendor:publish --tag=api-factory"
+        "post-update-install": [
+            "php artisan vendor:publish --tag=api-factory >>dump.txt"
         ]
     },
     "config": {
