@@ -2,8 +2,30 @@
 
 namespace Dminustin\ApiFactory\Classes;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use Psr\Log\LoggerInterface;
+
 class Logger extends \Illuminate\Log\Logger
 {
+    public function __construct()
+    {
+        /*_*/
+    }
+
+
+    public function header($title)
+    {
+        echo $this->formatYellow('START ' . $title) . PHP_EOL;
+        echo '======================' . PHP_EOL;
+    }
+
+    public function footer($title)
+    {
+        echo $this->formatYellow('END ' . $title) . PHP_EOL;
+        echo PHP_EOL;
+        echo PHP_EOL;
+    }
+
     protected function writeLog($level, $message, $context): void
     {
         if ($level == 'info') {

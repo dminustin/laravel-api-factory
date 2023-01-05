@@ -8,6 +8,7 @@ use Dminustin\ApiFactory\Classes\BaseModel;
  * Class RouteConfig
  * @property string $method
  * @property string $path
+ * @property string $prefix
  * @property string $description
  * @property array $produces
  * @property array $responses
@@ -20,6 +21,7 @@ class EndPoint extends BaseModel
 {
     protected string $method;
     protected string $path;
+    protected string $prefix;
     protected string $description = '';
     protected array $responses = [
         200 => [

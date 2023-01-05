@@ -16,13 +16,11 @@ class ApiCreateCommand extends Command
     /**
      * @throws Exception
      */
-    public function handle()
+    public function handle(): void
     {
         $routes = new EndPointCollection(
             Yaml::parseFile(
-                base_path(
-                    config('api-factory')['routesFile']
-                )
+                base_path(config('api-factory')['routesFile'])
             )
         );
 
@@ -50,7 +48,11 @@ class ApiCreateCommand extends Command
                 $route->path === $newRoute['path'] &&
                 $route->method === $newRoute['method']
             ) {
-                $this->stopApp(sprintf('Route %s : %s already exists', $newRoute['method'], $newRoute['path']));
+                $this->stopApp(sprintf(
+                    'Route %s : %s already exists',
+                    $newRoute['method'],
+                    $newRoute['path']
+                ));
             }
         }
 
@@ -89,7 +91,7 @@ class ApiCreateCommand extends Command
         file_put_contents(base_path($config->routesFile), Yaml::dump($routes->toArray()));
     }
 
-    protected function stopApp($message)
+    protected function stopApp(string $message): void
     {
         $this->warn($message);
         exit(0);

@@ -12,6 +12,7 @@ class RuleConverter extends AbstractDataConverter
         'bool' => ['type' => 'boolean'],
         'file' => ['type' => 'string', 'format' => 'binary'],
         'string' => ['type' => 'string'],
+        'email' => ['type' => 'string'],
         'integer' => ['type' => 'integer', 'format' => 'int64'],
     ];
 

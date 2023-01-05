@@ -8,7 +8,9 @@ use Dminustin\ApiFactory\Classes\RouterConfig\EndPoint;
 
 class HttpControllerGenerator extends AbstractGenerator
 {
-    public function generate()
+    protected string $name = 'Controller generator';
+
+    protected function run()
     {
         $template = $this->loadTemplate('api_factory_controller');
 
@@ -29,31 +31,15 @@ class HttpControllerGenerator extends AbstractGenerator
                 $this->config->generatedActionNSSuffix,
             );
 
-            if (!$this->config->overrideControllers && file_exists($classAttributes->getFilePath())) {
-                $this->log->warning('Class exists: ' . json_encode([
-                        'Path:' => $route->path,
-                        'Filename:' => $classAttributes->getFilePath(),
-                        'ClassName:' => $classAttributes->getClassName(),
-                        'ShortName:' => $classAttributes->getShortClassName(),
-                    ]));
-                continue;
-            }
-
-            $this->log->info('Generate Controller ' . json_encode([
-                    'Path:' => $route->path,
-                    'Filename:' => $classAttributes->getFilePath(),
-                    'ClassName:' => $classAttributes->getClassName(),
-                    'ShortName:' => $classAttributes->getShortClassName(),
-                ]));
-
             $this->renderingMap = [
                 'namespace' => $classAttributes->getNameSpace(),
                 'className' => $classAttributes->getShortClassName(),
                 'actionName' => $actionAttributes->getClassName(),
+                'generator' => $this->info->name . ' v.' . $this->info->version
             ];
 
             $rendered = $this->render($template);
-            $this->writeFile($rendered, $classAttributes->getFilePath());
+            $this->saveFile($classAttributes->getFilePath(), $rendered, $this->config->overrideControllers);
         }
     }
 }

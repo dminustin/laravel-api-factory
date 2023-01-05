@@ -8,7 +8,7 @@ auth/:
       - application/json
     tags: [auth, user]
     params:
-      email: string|required|unique:users,email
+      email: email|required
       password: string|required
     responses:
       200:
@@ -25,9 +25,9 @@ auth/:
       - application/json
     method: post
     params:
-      email: string|required
+      email: email|required|unique:users
       password: string|required
-      confirm: boolean|required
+      confirm: string|required
   -
     path: reset
     middlewares: [guest]

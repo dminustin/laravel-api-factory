@@ -12,25 +12,38 @@ It makes:
 
 ### The general philosophy is:
 
-"Actions" contains all functionality, you may want to use it without HTTP requests, for example, in workers
+"Actions" are contains all functionality, you may want to use it without HTTP requests, for example, in workers
 
 "Controllers" must call "Actions" for any actions and must return an action result. No logic in controllers 
 
-Default Directory structure:
+Default Directory/files structure:
 ```
+config
+ | api-factory.php
 app
+| routes
+    | example.yaml
 | http
   | ApiFactory
     | Actions
+      | ...
     | Controllers
+      | ...
 ```
 
-Controllers extends the ApiFactoryController
+Paths and filenames can changed in the api-factory.php file  
+Routes directives you can see in [ROUTES](ROUTES.md).  
+Controllers are extends the ApiFactoryController  
+Actions are extends the ApiFactoryAction  
+You can change parent classes in stubs  
 
-Actions extends the ApiFactoryAction
-
-You can chane parent classes in stubs
-
+Do not forget to add an exception in your app/Http/Middleware/VerifyCsrfToken.php file
+```php
+    //just example
+    protected $except = [
+        '/api/*'
+    ];
+```
 
 ## Todo
 - implement middlewares in routes

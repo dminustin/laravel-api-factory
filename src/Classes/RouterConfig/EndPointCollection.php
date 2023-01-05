@@ -20,6 +20,7 @@ class EndPointCollection
         $point = new EndPoint($endpoint);
         $point->path = $prefix . $point->path;
         $this->endPoints[] = $point;
+        $point->prefix = $prefix;
         return $this;
     }
 
@@ -28,7 +29,10 @@ class EndPointCollection
         return $this->endPoints;
     }
 
-    public function toArray()
+    /**
+     * @return array
+     */
+    public function toArray(): array
     {
         $paths = [];
         foreach ($this->endPoints as $point) {

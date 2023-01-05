@@ -10,6 +10,7 @@ namespace Dminustin\ApiFactory\Classes;
  * @property bool $generateActions
  * @property bool $generateSwaggerDoc
  * @property bool $overrideControllers
+ * @property bool $generatePostmanCollection
  * @property bool $overrideActions
  * @property string $uriPrefix
  * @property array $middlewares
@@ -26,12 +27,13 @@ namespace Dminustin\ApiFactory\Classes;
 class Config extends BaseModel
 {
     protected string $routesFile = 'app/routes/example.yaml';
-    protected bool $generateRoutes = false;
-    protected bool $generateControllers = false;
-    protected bool $generateActions = false;
-    protected bool $generateSwaggerDoc = false;
-    protected bool $overrideControllers = false;
-    protected bool $overrideActions = false;
+    protected bool $generateRoutes = true;
+    protected bool $generateControllers = true;
+    protected bool $generateActions = true;
+    protected bool $generateSwaggerDoc = true;
+    protected bool $overrideControllers = true;
+    protected bool $overrideActions = true;
+    protected bool $generatePostmanCollection = true;
 
     protected string $uriPrefix = '/api/v1/';
     protected array $middlewares = [];

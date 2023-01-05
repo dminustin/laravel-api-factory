@@ -21,13 +21,11 @@ class ApiFactoryCommand extends Command
     }
 
 
-    public function handle()
+    public function handle(): void
     {
         $routes = new EndPointCollection(
             Yaml::parseFile(
-                base_path(
-                    config('api-factory')['routesFile']
-                )
+                base_path(config('api-factory')['routesFile'])
             )
         );
 
