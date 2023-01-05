@@ -17,8 +17,9 @@ function incVersion($version, $position = 0)
 
 $version = implode('.', $version);
 $data['version'] = $version;
-file_put_contents(__DIR__ . '/composer.json', json_encode($data, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+file_put_contents(__DIR__ . '/composer.json', json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 
 system('git add .');
 system('git commit -m "Patch v. ' . $version . '"');
+system('git tag -a ' . $version . ' -m "Patch v. ' . $version . '"');
 system('git push origin master');
