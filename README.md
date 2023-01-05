@@ -2,13 +2,14 @@
 
 [![Latest Stable Version](http://poser.pugx.org/dminustin/laravel-api-factory/v)](https://packagist.org/packages/dminustin/laravel-api-factory) [![Total Downloads](http://poser.pugx.org/dminustin/laravel-api-factory/downloads)](https://packagist.org/packages/dminustin/laravel-api-factory) [![Latest Unstable Version](http://poser.pugx.org/dminustin/laravel-api-factory/v/unstable)](https://packagist.org/packages/dminustin/laravel-api-factory) [![License](http://poser.pugx.org/dminustin/laravel-api-factory/license)](https://packagist.org/packages/dminustin/laravel-api-factory) [![PHP Version Require](http://poser.pugx.org/dminustin/laravel-api-factory/require/php)](https://packagist.org/packages/dminustin/laravel-api-factory)
 
-This package helps to fast generate APIs
+All-in-one flexible and customizable code generator for Laravel framework that will save you time. This tool will help you generate resources like controllers, routes, swagger doc, postman collection.
 
 It makes:
 - Controllers
 - Actions
 - Routes
 - Swagger Documentation
+- Postman collection
 
 ### The general philosophy is:
 
