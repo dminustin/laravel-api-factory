@@ -21,5 +21,5 @@ file_put_contents(__DIR__ . '/composer.json', json_encode($data, JSON_PRETTY_PRI
 
 system('git add .');
 system('git commit -m "Patch v. ' . $version . '"');
-system('git tag -a ' . $version . ' -m "Patch v. ' . $version . '"');
-system('git push origin master');
+system('git tag -a ' . $version . ' HEAD -m "Patch v. ' . $version . '"');
+system('git push origin master ' . $version);
