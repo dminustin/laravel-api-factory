@@ -18,3 +18,6 @@ All notable changes to `laravel-api-factory` will be documented in this file
 - Added Postman collection generator
 - Fixes some bugs
 - Added PHPStan analyzator support
+
+## 1.1.0.10 - 05 Jan, 2023
+- Added console command to create route

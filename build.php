@@ -8,7 +8,7 @@ $version = incVersion($version, count($version) - 1);
 function incVersion($version, $position = 0)
 {
     $version[$position] += 1;
-    if (($version[$position] > 100) && ($position > 0)) {
+    if (($version[$position] > 99) && ($position > 0)) {
         $version[$position] = 0;
         $version = incVersion($version, $position - 1);
     }

@@ -7,7 +7,10 @@ use Dminustin\ApiFactory\Classes\RouterConfig\EndPoint;
 use Dminustin\ApiFactory\Classes\RouterConfig\EndPointCollection;
 use Exception;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 use Symfony\Component\Yaml\Yaml;
+
+use function Orchestra\Testbench\artisan;
 
 class ApiCreateCommand extends Command
 {
@@ -86,9 +89,11 @@ class ApiCreateCommand extends Command
             var_export($newRoute['params'], true)
         );
 
-        $this->choice('Confirm to create endpoint: ' . $ep, ['yes', 'no']);
-
-        file_put_contents(base_path($config->routesFile), Yaml::dump($routes->toArray()));
+        $confirm = $this->choice('Confirm to create endpoint: ' . $ep, ['yes', 'no']);
+        if ($confirm === 'yes') {
+            file_put_contents(base_path($config->routesFile), Yaml::dump($routes->toArray()));
+            Artisan::call('api:factory');
+        }
     }
 
     protected function stopApp(string $message): void

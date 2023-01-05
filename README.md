@@ -48,8 +48,6 @@ Do not forget to add an exception in your app/Http/Middleware/VerifyCsrfToken.ph
 
 ## Todo
 - implement middlewares in routes
-- extend controller stub
-- add postman collection writer
 
 ## Installation
 
@@ -85,6 +83,11 @@ You can change ./stubs files
 
 ```php
 php artisan api:factory
+```
+
+## Step-by-step route creation
+```php
+php artisan api:create
 ```
 
 ### Testing
