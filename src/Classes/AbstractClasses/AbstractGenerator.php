@@ -65,6 +65,6 @@ abstract class AbstractGenerator
         foreach ($this->renderingMap as $key => $value) {
             $template = str_replace('%' . $key . '%', $value, $template);
         }
-        return $template;
+        return trim($template);
     }
 }

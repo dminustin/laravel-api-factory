@@ -45,6 +45,8 @@ class ApiCreateCommand extends Command
             $newRoute['method'] = $this->choice('Request method', ['post', 'get', 'put', 'delete', 'patch', 'any'], 'post');
         }
 
+        $newRoute['description'] = $this->ask('Description of thiss route', '');
+
         /** @var EndPoint $route */
         foreach ($routes->getEndPoints() as $route) {
             if (
@@ -82,9 +84,10 @@ class ApiCreateCommand extends Command
         $routes->addEndPoint('', $newRoute);
 
         $ep = sprintf(
-            "URI: %s,\nMethod: %s,\nMiddleware: %s,\nParams: %s",
+            "URI: %s,\nMethod: %s,\nDescription: %s,\nMiddleware: %s,\nParams: %s",
             $newRoute['path'],
             $newRoute['method'],
+            $newRoute['description'],
             var_export($newRoute['middlewares'], true),
             var_export($newRoute['params'], true)
         );

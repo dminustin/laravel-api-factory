@@ -1,1 +1,1 @@
-Route::%method%('%path%', [%className%::class, 'handle']);
+Route::%method%('%path%', [%className%::class, 'handle'])%middlewares%;

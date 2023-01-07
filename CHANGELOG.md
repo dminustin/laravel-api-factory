@@ -21,3 +21,7 @@ All notable changes to `laravel-api-factory` will be documented in this file
 
 ## 1.1.0.10 - 05 Jan, 2023
 - Added console command to create route
+
+## 1.1.1.1 - 07 Jan, 2023
+- Added middlewares support for routes
+- Added route description in console command query 

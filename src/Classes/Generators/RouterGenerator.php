@@ -24,6 +24,9 @@ class RouterGenerator extends AbstractGenerator
          * @var EndPoint $route
          */
         foreach ($this->routes as $route) {
+            $middlewares = (count($route->middlewares) < 1) ? '' :
+                '->middleware([\'' . implode('\', \'', $route->middlewares) . '\'])';
+
             $classAttributes = new ClassAttributes(
                 $route->path,
                 $this->config->generatedControllerPathPrefix,
@@ -35,6 +38,7 @@ class RouterGenerator extends AbstractGenerator
                 'className' => $classAttributes->getClassName(),
                 'method' => $route->method,
                 'path' => $this->config->uriPrefix . $route->path,
+                'middlewares' => $middlewares
             ];
             $result[] = $this->render($template);
         }
