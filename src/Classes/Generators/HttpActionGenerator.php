@@ -38,7 +38,7 @@ class HttpActionGenerator extends AbstractGenerator
                 'className' => $actionAttributes->getShortClassName(),
                 'actionName' => $actionAttributes->getClassName(),
                 'rules' => implode(PHP_EOL, $rules),
-                'generator' => $this->info->name . ' v.' . $this->info->version
+                'generator' => $this->info->getGeneratorTitle()
             ];
 
             $rendered = $this->render($template);

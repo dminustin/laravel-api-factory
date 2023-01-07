@@ -25,7 +25,9 @@ class LaravelApiFactoryServiceProvider extends ServiceProvider
                 __DIR__ . '/../stubs/api_factory_action' =>
                     base_path('stubs/api_factory_action'),
                 __DIR__ . '/../stubs/api_factory_router' =>
-                    base_path('stubs/api_factory_router')
+                    base_path('stubs/api_factory_router'),
+                __DIR__ . '/../stubs/api_factory_test' =>
+                    base_path('stubs/api_factory_test')
             ], 'api-factory');
 
             $this->commands([

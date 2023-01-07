@@ -10,6 +10,7 @@ It makes:
 - Routes
 - Swagger Documentation
 - Postman collection
+- Unit tests for Actions
 
 All my Laravel`s projects I have one pain: there is necessary to create routes, controllers, validators and such more routines. From project to project I have to do same actions.  
 For this purpose, I wrote a composer component that helps me to make easily all of my tasks. I hope that my component will be helpful for other Laravel programmers.    

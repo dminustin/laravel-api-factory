@@ -3,7 +3,7 @@
     "minimum-stability": "stable",
     "readme": "README.md",
     "description": "All-in-one flexible and customizable code generator for Laravel framework that will save you time. This tool will help you generate resources like controllers, routes, swagger doc, postman collection.",
-    "version": "1.1.1.1",
+    "version": "1.2.0.1",
     "keywords": [
         "laravel",
         "api",

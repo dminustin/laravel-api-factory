@@ -10,6 +10,7 @@ use Dminustin\ApiFactory\Classes\Generators\HttpControllerGenerator;
 use Dminustin\ApiFactory\Classes\Generators\PostmanCollectionGenerator;
 use Dminustin\ApiFactory\Classes\Generators\RouterGenerator;
 use Dminustin\ApiFactory\Classes\Generators\SwaggerGenerator;
+use Dminustin\ApiFactory\Classes\Generators\TestsGenerator;
 use Dminustin\ApiFactory\Classes\Logger;
 use Dminustin\ApiFactory\Classes\RouterConfig\EndPoint;
 use Dminustin\ApiFactory\Classes\RouterConfig\EndPointCollection;
@@ -20,7 +21,8 @@ class LaravelApiFactory
      * @var array|string[]
      */
     protected array $generators = [
-        RouterGenerator::class => 'generateRoutes',
+        RouterGenerator::class => 'generateTests',
+        TestsGenerator::class => 'generateRoutes',
         HttpControllerGenerator::class => 'generateControllers',
         HttpActionGenerator::class => 'generateActions',
         SwaggerGenerator::class => 'generateSwaggerDoc',

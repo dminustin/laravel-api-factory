@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'generateTests' => true,
     'generateRoutes' => true,
     'generateControllers' => true,
     'generateActions' => true,
@@ -8,6 +9,7 @@ return [
     'generateSwaggerDoc' => true,
     'overrideControllers' => false,
     'overrideActions' => false,
+    'overrideTests' => false,
     'routesFile' => 'app/routes/example.yaml',
 
     'outRouteFileName' => 'routes/web.php',
