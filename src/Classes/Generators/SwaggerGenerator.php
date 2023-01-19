@@ -64,6 +64,11 @@ class SwaggerGenerator extends AbstractGenerator
         $result['componentss'] = $this->config->components;
 
         $outFileName = base_path('public/docs/api-docs.json');
-        $this->saveFile($outFileName, json_encode($result, JSON_PRETTY_PRINT), true);
+        $this->saveFile($outFileName, json_encode(
+            $result,
+            JSON_PRETTY_PRINT |
+            JSON_UNESCAPED_SLASHES |
+            JSON_UNESCAPED_UNICODE
+        ), true);
     }
 }

@@ -29,3 +29,6 @@ All notable changes to `laravel-api-factory` will be documented in this file
 ## 1.2.0.1 - 07 Jan, 2023
 - Added unit tests generator
 
+## 1.2.0.2 - 19 Jan, 2023
+- Changed json format in the Swagger generator
+- Fixed bug with Unit test
