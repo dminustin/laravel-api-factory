@@ -29,7 +29,7 @@ return [
     'middlewares' => [
         'auth' => ['auth', 'registered'],
         'guest' => ['guest'],
-        'admin' => ['toleAdmin']
+        'admin' => ['roleAdmin']
     ],
 
     //Swagger response definitions
