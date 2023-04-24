@@ -36,14 +36,23 @@ class ClassAttributes
         $this->nameSpace = implode('\\', $tmp);
     }
 
+    protected function reformatURIForNS(string $uri): string
+    {
+        $uri = preg_replace('#\\{.*?\\}#', '', $uri);
+        $uri = str_replace('//', '/', $uri);
+
+        return ucwords($uri, '/');
+    }
+
     protected function formatName()
     {
         $result = sprintf(
             '%s/%s%s',
             (!empty($this->nsPrefix)) ? $this->nsPrefix . '/' : '',
-            ucwords($this->uri, '/'),
+            $this->reformatURIForNS($this->uri),
             (!empty($this->nsSuffix)) ? $this->nsSuffix : '',
         );
+
         return preg_replace('#[/]+#', '/', $result);
     }
 
@@ -57,7 +66,7 @@ class ClassAttributes
         $result = sprintf(
             '%s/%s%s',
             (!empty($this->pathPrefix)) ? $this->pathPrefix . '/' : '',
-            ucwords($this->uri, '/'),
+            $this->reformatURIForNS($this->uri),
             (!empty($this->nsSuffix)) ? $this->nsSuffix : '',
         );
         $this->filePath = base_path(preg_replace('#[/]+#', '/', $result) . '.php');

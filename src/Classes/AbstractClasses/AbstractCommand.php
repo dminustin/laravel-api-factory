@@ -8,6 +8,13 @@ abstract class AbstractCommand
 
     abstract public function getCommandName(): string;
 
+    public function __construct(mixed $params = null)
+    {
+        if (!is_null($params)) {
+            $this->params = $params;
+        }
+    }
+
     /**
      * @return mixed
      */
