@@ -98,6 +98,7 @@ class ApiCreateCommand extends Command
         $newRoute['middlewares'] = $this->middleWares[$keys[$chosenMiddlewaresIndex]];
 
         $newRoute['params'] = [];
+
         while (true) {
             $newParam = $this->ask('Param name', '');
             if (empty($newParam)) {
