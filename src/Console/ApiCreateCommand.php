@@ -25,12 +25,16 @@ class ApiCreateCommand extends Command
         parent::__construct();
         $this->config = new Config(config('api-factory'));
 
-        $this->routes = new EndPointCollection(
-            Yaml::parseFile(
-                base_path(config('api-factory')['routesFile'])
-            )
-        );
-        $this->fillMiddlewares();
+        if (file_exists(config('api-factory')['routesFile'])) {
+            $this->routes = new EndPointCollection(
+                Yaml::parseFile(
+                    base_path(config('api-factory')['routesFile'])
+                )
+            );
+            $this->fillMiddlewares();
+        } else {
+            echo 'File ' . config('api-factory')['routesFile'] . ' does not exists';
+        }
     }
 
     /**
